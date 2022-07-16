@@ -1,0 +1,129 @@
+snippet for
+	for (int ${1:i} = 0; $1 < ${2:n}; $1++) {
+		$0
+	}
+snippet forr
+	for (int ${1:i} = ${2:n} - 1; $1 >= 0; $1--) {
+		$0
+	}
+snippet fore
+	for (auto& ${1:it} : ${2:obj}) {
+		$0
+	}
+snippet lmain
+	#ifdef LOCAL 
+	int main() {
+		$0
+	}
+	#endif
+snippet sort
+	sort(${1:a}.begin(), $1.end());
+	$0
+snippet visit2
+	auto doit = [&](int i1, int j1) {
+		if (i1 == -1 || j1 == -1 || i1 == ${1:m} || j1 == ${2:n}) return;
+		$0
+	};
+
+	doit(i + 1, j);
+	doit(i - 1, j);
+	doit(i, j + 1);
+	doit(i, j - 1);
+
+snippet cache
+	if (${1:cache[i][j]} != -1) return $1;
+	$0
+	return $1 = val;
+snippet hashp
+	namespace std {
+	template <>
+	struct hash<std::pair<int, int>> {
+		inline size_t operator()(const std::pair<int, int> &v) const {
+			std::hash<int> int_hasher;
+			return int_hasher(v.first) ^ int_hasher(v.second);
+		}
+	};
+	}
+snippet alias
+	using i = int;
+	using b = bool;
+	using ll = long long;
+	using str = string;
+
+	template <typename t = i, typename u = i>
+	using p = pair<t, u>;
+
+	template <typename t = i>
+	using v = vector<t>;
+
+	template <typename t = i>
+	using s = stack<t>;
+
+	template <typename t = i>
+	using q = queue<t>;
+
+	template <typename t = i>
+	using pq = priority_queue<t>;
+
+	template <typename t = i>
+	using min_pq = priority_queue<t, v<t>, greater<t>>;
+
+	template <typename Edge = i>
+	using g = v<v<Edge>>;
+
+	using vb = v<b>;
+	using ii = p<i, i>;
+	using vi = v<i>;
+	using vs = v<str>;
+	using si = s<i>;
+	using qi = q<i>;
+	using pqi = pq<i>;
+	using min_pqi = min_pq<i>;
+	using vii = v<ii>;
+	using gi = g<i>;
+	using gii = g<ii>;
+
+	#define umap unordered_map
+	#define uset unordered_set
+
+
+snippet rev
+	reverse($1.begin(), $1.end());
+	$0
+snippet imports
+	#include <bits/stdc++.h>
+	using namespace std;
+
+snippet main
+	int main() {
+		$0
+	}
+snippet tests
+	int T;
+	cin >> T;
+	for (int t = 1; t <= T; t++) {
+		$0
+	}
+snippet readstr
+	string ${1:s};
+	cin >> $1;
+	$0
+snippet readint
+	int ${1:x};
+	cin >> $1
+snippet ld
+	[$1] ($2) {
+		$0
+	};
+snippet if
+	if ($1) {
+		$0
+	}
+snippet elif
+	else if ($1) {
+		$0
+	}
+snippet else
+	else {
+		$1
+	}
